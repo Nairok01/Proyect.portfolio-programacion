@@ -1,0 +1,434 @@
+:root {
+    --bg-color: #0d2137;
+    --accent-teal: #4c7c8c;
+    --text-white: #ffffff;
+    --nav-hover: #00d2ff;
+}
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(rgba(13, 33, 55, 0.8), rgba(13, 33, 55, 0.8)), url('img/Fondo.jpeg');
+    background-size: cover;
+    color: var(--text-white);
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-seccion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 2rem; 
+}
+
+.logo-pill {
+    background-color: var(--accent-teal);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+}
+
+nav a.active {
+    color: var(--nav-hover);
+    border-bottom: 2px solid var(--nav-hover);
+}
+
+/* --- CONTENIDO --- */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+/* --- ESTE ES EL ANCLA CLAVE --- */
+.image-container {
+    flex: 1;
+    position: relative;
+    min-height: clamp(300px, 45vh, 550px);
+}
+
+/* --- ESTILO COMÚN PARA AMBAS CAPAS --- */
+.image-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+}
+
+.heaven {
+    width: 200%;
+    max-width: 600px;
+    height: auto;
+    top: 50%;
+    left: 50px;
+    z-index: 1;
+}
+
+.eye {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    z-index: 2;
+}
+
+.info-container {
+    flex: 1;
+    padding-left: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea todo el contenido a la derecha */
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    text-align: center;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    text-align: right;
+}
+
+/* Decoración lateral */
+.timeline-decorator {
+    position: absolute;
+    right: -2rem;
+    top: 20%;
+    height: 60%;
+    width: 2px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 50%;
+    background: var(--bg-color);
+}
+
+.dot.filled {
+    background: white;
+}
+
+.img-final {
+    display: block;
+    margin: 2rem auto;   /* Centra horizontalmente y da espacio arriba/abajo */
+    max-width: 400px;
+    height: auto;        /* Mantiene la proporción */
+}
+
+
+.portfolio-main {
+    justify-content: center;
+}
+
+.portfolio-container {
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+}
+
+.line {
+    width: 60%;
+    flex-grow: 1;
+    height: 4px;
+    background: white;
+    margin: 0;
+}
+
+.cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    width: 280px; 
+    height: 380px;
+    background: #222;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.card-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.card-tag {
+    position: absolute;
+    bottom: -20px;
+    background-color: var(--accent-teal);
+    color: white;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    white-space: nowrap;
+}
+
+/* Efecto al pasar el mouse */
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.card:hover .card-tag {
+    background-color: var(--nav-hover);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* --- CONTACTO --- */
+
+.contact-main {
+    justify-content: center;
+}
+
+.contact-container {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+}
+
+.contact-form {
+    background: var(--accent-teal);
+    padding: 2rem;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: #1f4e5a;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 150px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #123944;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 20px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: var(--nav-hover);
+}
+
+.portfolio-container h1,
+.contact-container h1 {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 3rem;
+}
+
+.header-portfolio {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 1rem auto;
+    gap: 20px;
+}
+
+.linea-decorativa {
+    height: 4px;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.titulo-pagina {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    color: white;
+}
+
+.detalle-container {
+    background-color: var(--accent-teal);
+    border-radius: 40px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-imagenes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; /* Espacio entre los videos */
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.detalle-main {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.seccion-titulo {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    margin-left: 0;
+    text-align: center;
+}
+
+/* --- La Grilla de Imágenes --- */
+.galeria-seccion {
+    position: relative;
+    width: 100%;
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-imagenes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.grid-imagenes img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.categoria-label {
+    background-color: #122332;
+    color: white;
+    padding: 0.8rem 4rem;
+    border-radius: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    position: absolute;
+    bottom: -25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 5;
+}
+
+.contact-form button:hover {
+    background: var(--nav-hover);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+    main { flex-direction: column; text-align: center; }
+    .info-container { padding-left: 0; margin-top: 3rem; }
+    .header-portfolio {
+        flex-direction: column;
+        text-align: center;
+    }
+    .description { text-align: center; margin: 0 auto; }
+    .software-icons { justify-content: center; }
+    .timeline-decorator { display: none; }
+    .grid-imagenes { grid-template-columns: 1fr; }
+    .linea-decorativa { display: none; }
+}
